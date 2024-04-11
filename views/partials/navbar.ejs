@@ -1,0 +1,18 @@
+<style>
+  .top-right-menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+  .top-right-menu a {
+      margin-right: 10px; 
+  }
+</style>
+<div class="navbar bg-base-100"> 
+  <a href="/" class="btn btn-accent">Lego Collection</a>
+  <div class="top-right-menu">
+    <a href="/about" class="<%= (page === '/about') ? 'active' : '' %> btn btn-accent">About</a>
+    <a href="/lego/sets" class="<%= (page === '/lego/sets') ? 'active' : '' %> btn btn-accent">View Collection</a>
+    <a href="/lego/addSet" class="<%= (page === '/lego/addSet') ? 'active' : '' %> btn btn-accent">Add to Collection</a>
+  </div>
+</div>

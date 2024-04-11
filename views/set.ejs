@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html data-theme="cyberpunk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= set.name %></title>
+    <link rel="stylesheet" href="/css/main.css">
+
+ 
+</head>
+<body>
+    <%- include('partials/navbar', { page: '/lego/sets' }) %>
+    <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center ">
+            <div class="max-w-md">
+                <h1 class="text-5xl font-bold"><%= set.name %></h1>
+                <p class="py-6">
+                    Information about the set: </br>
+                    <strong><%= set.name %> </strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-side bg-base-100 shadow-xl">
+        <figure style="padding-left: 20px;"> <img src="<%= set.img_url %>" alt="<%= set.name %>"style="width: 400px; height: 350px;"></figure>
+        <div class="card-body">
+            <table>
+                <tr>
+                    <td><strong>Set Name: </strong><%= set.name %></td>
+                </tr>
+                <tr>
+                    <td><strong>Year: </strong><%= set.year %></td>
+                </tr>
+                <tr>
+                    <td><strong>Theme: </strong><%= set.Theme.name %></td>
+                </tr>
+                <tr>
+                    <td><strong>Number of Parts: </strong><%= set.num_parts %></td><br>
+                </tr>
+                <tr>
+                    <td><br><br></td>
+                </tr>
+                <tr>
+                    <td><span id="quote"></span></td>
+                </tr>
+                <tr>
+                    <td><br><br></td>
+                </tr>
+                <tr>
+                    <td> <a class="btn btn-primary"href="/lego/editSet/<%= set.set_num %>">EDIT SET: <%= set.name %> </a>
+                </tr>
+                <tr>
+                    <td> <a class="btn btn-primary"href="/lego/deleteSet/<%= set.set_num %>">DELETE SET: <%= set.name %> </a>
+                </tr>
+                <tr>
+                    <td> <a class="btn btn-primary"href="#" onclick="history.back(); return false;">RETURN</a>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    
+
+
+</body>
+</html>

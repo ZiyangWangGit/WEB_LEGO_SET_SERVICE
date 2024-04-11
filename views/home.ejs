@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html data-theme="cyberpunk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+
+
+    <%- include('partials/navbar', { page: '/' }) %>
+   
+    <div class="container mx-auto">
+        <div class="hero min-h-screen bg-base-200">
+            <div class="hero-content flex-col lg:flex-row">
+              <img src="https://cdn.rebrickable.com/media/sets/10000-1.jpg" class="max-w-sm rounded-lg shadow-2xl" />
+              <div>
+                <h1 class="text-5xl font-bold">Welcome to Lego World!</h1>
+                <p class="py-6">Only the Best is Good Enough.</p>
+                <button onclick="window.location.href='./lego/sets'" class="btn btn-active btn-accent">Explore Lego Sets</button>
+              </div>
+            </div>
+          </div>
+  </div>
+
+  <div class="grid grid-cols-3">
+    <div class="card w-96 bg-base-100 shadow-xl">
+        <figure><img src="https://cdn.rebrickable.com/media/sets/088-1.jpg" alt="Lego" style="width: 500px;height:300px"/></figure>
+        <div class="card-body">
+          <h2 class="card-title">
+            SuperSet (1969)
+          </h2>
+          <p>Welcome to the History of LEGO</p>
+          <div class="card-actions justify-end">
+            <a href="/lego/sets/088-1" button class="btn btn-secondary" id="rebrickableLink">Rebrickable Site</a>
+        </div>
+        </div>
+      </div>
+      <div class="card w-96 bg-base-100 shadow-xl">
+        <figure><img src="https://cdn.rebrickable.com/media/sets/1000-1.jpg" alt="Lego"style="width: 500px;height:300px" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">
+            Mosaic Set (1985)
+          </h2>
+          <p>Welcome to the History of LEGO</p>
+          <div class="card-actions justify-end">
+            <a href="/lego/sets/1000-1" button class="btn btn-secondary" id="rebrickableLink">Rebrickable Site</a>
+          </div>
+        </div>
+      </div>
+      <div class="card w-96 bg-base-100 shadow-xl">
+        <figure><img src="https://cdn.rebrickable.com/media/sets/080-1.jpg" alt="Lego" style="width: 500px;height:300px"/></figure>
+        <div class="card-body">
+          <h2 class="card-title">
+            Building Set with Train (1967)
+          </h2>
+          <p>Welcome to the History of LEGO</p>
+          <div class="card-actions justify-end">
+               <a href="/lego/sets/080-1" button class="btn btn-secondary" id="rebrickableLink">Rebrickable Site</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
+

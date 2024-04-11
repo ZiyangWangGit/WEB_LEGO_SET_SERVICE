@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html data-theme="cyberpunk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <%- include('partials/navbar', { page: '/about' }) %>
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">ABOUT ME</h1>
+            <p class="py-6">Would you like to hear about my story?</p>
+            <button class="btn btn-accent" onclick="scrollToSection()">Get Started</button> 
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="container mx-auto" id="aboutSection">
+            <img src="/css/aboutme.jpg" alt="About me" style="width: 280px;height:300px">
+        </div>
+        <div class="container mx-auto" id="aboutBlurb">
+          <p>
+              Here's a short blurb about myself:
+              <ul>
+                  <li>Hobbies: VIDEO GAMES, SOCCER, READING, TRAVELING</li>
+                  <li>Courses I am taking: OOP, WEB, DATABASE, MACHINE LEARNING</li>
+              </ul>
+              In addition to my hobbies and courses, I'm also passionate about exploring new technologies and learning about different cultures. I enjoy challenging myself with new projects and constantly expanding my skill set.
+          </p>
+      </div>
+
+      <script>
+        function scrollToSection() {
+            var aboutSection = document.getElementById("aboutSection");
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      </script>
+</body>
+</html>
