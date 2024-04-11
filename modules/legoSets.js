@@ -42,7 +42,7 @@ const GetAllSets = async () => {
     }
     return sets;
   } catch (err) {
-    console.error(`There was an error: ${err.message}`);
+    console.error(err.message);
   }
 };
 
@@ -66,7 +66,7 @@ const GetSetsByTheme = async (theme) => {
       console.log('Populated sets:', sets);
     })
     .catch((err) => {
-      console.error('Error populating sets:', err);
+      console.error(err);
     });
     if (foundSets.length === 0) {
       throw new Error('Unable to find requested sets');
@@ -77,12 +77,14 @@ const GetSetsByTheme = async (theme) => {
   }
 };
 
-const AddSet = async (setData) => {
-  try {
-    await Set.create(setData);
-  } catch (err) {
-    throw new Error(err.message);
-  }
+const AddSet = (setData) => {
+  Set.create(setData)
+    .then(() => {
+      console.log('Set added:', setData.set_num);
+    })
+    .catch((err) => {
+      console.error( err.message);
+    });
 };
 
 const GetAllThemes = async () => {
@@ -94,20 +96,26 @@ const GetAllThemes = async () => {
   }
 };
 
-const EditSet = async (set_num, setData) => {
-  try {
-    await Set.updateOne({ set_num: set_num }, setData);
-  } catch (err) {
-    throw new Error(err.message);
-  }
+const EditSet = (set_num, setData) => {
+  Set.updateOne({ set_num: set_num }, setData)
+    .exec()
+    .then(() => {
+      console.log('Set edited:', set_num);
+    })
+    .catch((err) => {
+      console.error(err.message);
+    });
 };
 
-const DeleteSet = async (set_num) => {
-  try {
-    await Set.deleteOne({ set_num: set_num });
-  } catch (err) {
-    throw new Error(err.message);
-  }
+const DeleteSet = (set_num) => {
+  Set.deleteOne({ set_num: set_num })
+    .exec()
+    .then(() => {
+      console.log('Set removed:', set_num);
+    })
+    .catch((err) => {
+      console.error( err.message);
+    });
 };
 
 module.exports = {
